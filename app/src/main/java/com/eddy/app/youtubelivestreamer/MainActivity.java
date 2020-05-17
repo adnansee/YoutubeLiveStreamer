@@ -14,7 +14,6 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 public class MainActivity extends YouTubeBaseActivity {
 
-    AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 
 
     @Override
@@ -32,6 +31,7 @@ public class MainActivity extends YouTubeBaseActivity {
             }
         });
 
+        AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 2, 0);
 
@@ -40,7 +40,7 @@ public class MainActivity extends YouTubeBaseActivity {
 
     public void playVideo(final String videoId, YouTubePlayerView youTubePlayerView) {
         //initialize youtube player view
-        youTubePlayerView.initialize("YOUR API KEY ",
+        youTubePlayerView.initialize("API",
                 new YouTubePlayer.OnInitializedListener() {
                     @Override
                     public void onInitializationSuccess(YouTubePlayer.Provider provider,
